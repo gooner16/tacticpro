@@ -24,7 +24,7 @@
   <ul>
     <li><a href="#tabs-1">Formation Editor</a></li>
     <li><a href="#tabs-2">Drill Maker</a></li>
-    <li><a href="#tabs-3">Aenean lacinia</a></li>
+    <li><a href="#tabs-3">Player Data</a></li>
   </ul>
   <div id="tabs-1">
   <style>
@@ -39,95 +39,7 @@
       }
   </style>
     <div id="container"></div>
-      <script>
-
-        var width = window.innerWidth;
-        var height = window.innerHeight;
-        var stage = new Konva.Stage({
-            container: 'container',
-            width: width,
-            height: height
-        });
-        var homex = [width-width/7,width-2*width/7,width-3*width/7,width-width/7,width-2*width/7,width-3*width/7,width-width/7,width-2*width/7,width-3*width/7,width-width/7,width-2*width/7]
-        var awayx = [width/7,2*width/7,3*width/7,width/7,2*width/7,3*width/7,width/7,2*width/7,3*width/7,width/7,2*width/7]
-        var homey = [height-height/5, height-2*height/5,height-3*height/5, height-4*height/5,height-height/5, height-2*height/5,height-3*height/5, height-4*height/5,height-height/5, height-2*height/5,height-3*height/5]
-        var layer = new Konva.Layer();
-        //make away team
-        var color = "red";
-        for(var i = 0; i < 11; i++) {
-            var box = new Konva.Circle({
-                x: awayx[i],
-                y: homey[i],
-                fill: color,
-                stroke: "black",
-                strokeWidth: 4,
-                draggable: true,
-                width: 100,
-                height: 50
-            });
-            box.on("dragstart", function() {
-                this.moveToTop();
-                layer.draw();
-            });
-            box.on("dragmove", function() {
-                document.body.style.cursor = "pointer";
-            });
-            /*
-               * dblclick to remove box for desktop app
-               * and dbltap to remove box for mobile app
-               */
-            box.on("dblclick dbltap", function() {
-                this.destroy();
-                layer.draw();
-            });
-            box.on("mouseover", function() {
-                document.body.style.cursor = "pointer";
-            });
-            box.on("mouseout", function() {
-                document.body.style.cursor = "default";
-            });
-            layer.add(box);
-        }
-
-       //make home team
-      var color = "blue";
-      for(var i = 0; i < 11; i++) {
-          var box = new Konva.Circle({
-              x: homex[i],
-              y: homey[i],
-              fill: color,
-              stroke: "black",
-              strokeWidth: 4,
-              draggable: true,
-              width: 100,
-              height: 50
-          });
-          box.on("dragstart", function() {
-              this.moveToTop();
-              layer.draw();
-          });
-          box.on("dragmove", function() {
-              document.body.style.cursor = "pointer";
-          });
-          /*
-             * dblclick to remove box for desktop app
-             * and dbltap to remove box for mobile app
-             */
-          box.on("dblclick dbltap", function() {
-              this.destroy();
-              layer.draw();
-          });
-          box.on("mouseover", function() {
-              document.body.style.cursor = "pointer";
-          });
-          box.on("mouseout", function() {
-              document.body.style.cursor = "default";
-          });
-          layer.add(box);
-        }
-        // add the layer to the stage
-        stage.add(layer);
-    </script>
+      <script src="js/formationEditor.js"></script>
   </div>
   <div id="tabs-2">
     <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
