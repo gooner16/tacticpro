@@ -17,6 +17,7 @@ function makePlayerCoords(xCoords, yCoords, homeOrAway){
         for(var i = 0; i < 11; ++i){
             coords.x = xCoords[i];
             coords.y = yCoords[i];
+            console.log(coords);
             defaultHome.push(coords);
         }
     }else{
