@@ -1,4 +1,4 @@
-var coord = {
+var coords = {
     x:0,
     y:0
 };
@@ -17,7 +17,7 @@ function makePlayerCoords(xCoords, yCoords, homeOrAway){
         for(var i = 0; i < 11; ++i){
             coords.x = xCoords[i];
             coords.y = yCoords[i];
-            defaultHome.push(coord);
+            defaultHome.push(coords);
         }
     }else{
         defaultAway = [];
@@ -25,7 +25,7 @@ function makePlayerCoords(xCoords, yCoords, homeOrAway){
         for(var i = 0; i < 11; ++i){
             coords.x = xCoords[i];
             coords.y = yCoords[i];
-            defaultAway.push(coord);
+            defaultAway.push(coords);
         }
     }
     
