@@ -7,8 +7,8 @@ var coord = {
 var defaultHome = [];
 var defaultAway = [];
 //example coords for testing
-var fourFourTwoHomeX = [1,2,3,1,2,3,1,2,3,1,2];
-var fourFourTwoHomeY = [1,2,3,4,1,2,3,4,1,2,3];
+var fourFourTwoHomeX = [0.8,1,1,1,1,2,2,2,2,3,3];
+var fourFourTwoHomeY = [2.5,1,2,3,4,1,2,3,4,2,3];
 //1 for home 0 for away coords
 function makePlayerCoords(xCoords, yCoords, homeOrAway){
     if(homeOrAway){
