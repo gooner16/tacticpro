@@ -1,3 +1,36 @@
+var coord = {
+    x:0,
+    y:0
+};
+
+//coordinates for default load
+var defaultHome = [];
+var defaultAway = [];
+//example coords for testing
+var fourFourTwoHomeX = [1,2,3,1,2,3,1,2,3,1,2];
+var fourFourTwoHomeY = [1,2,3,4,1,2,3,4,1,2,3];
+//1 for home 0 for away coords
+function makePlayerCoords(xCoords, yCoords, homeOrAway){
+    if(homeOrAway){
+        defaultHome = [];
+        //create default home coordinates
+        for(var i = 0; i < 11; ++i){
+            coords.x = xCoords[i];
+            coords.y = yCoords[i];
+            defaultHome.push(coord);
+        }
+    }else{
+        defaultAway = [];
+        //create default away coordinates
+        for(var i = 0; i < 11; ++i){
+            coords.x = xCoords[i];
+            coords.y = yCoords[i];
+            defaultAway.push(coord);
+        }
+    }
+    
+}
+
 
 var width = $(document.getElementById('container')).width();
 var height = window.innerHeight;
@@ -15,14 +48,14 @@ var defaultY = [1,2,3,4,1,2,3,4,1,2,3];
 var layer = new Konva.Layer();
 
 //https://konvajs.github.io/docs/sandbox/Drag_and_Drop_Multiple_Shapes.html
-
+makePlayerCoords(fourFourTwoHomeX, fourFourTwoHomeY, 1);
 //make draggable player markers
 for(var i = 0; i < 22; ++i) {
     if(i<11){
     	//draw away team
         var box = new Konva.Circle({
-        	x: defaultX[i]*stage.getWidth() / 7,
-      		y: defaultY[i]*stage.getHeight() / 5,
+        	x: defaultHome[i].x*stage.getWidth() / 7,
+      		y: defaultHome[i].y*stage.getHeight() / 5,
             fill: "red",
             stroke: "black",
             strokeWidth: 4,
