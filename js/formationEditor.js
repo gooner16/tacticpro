@@ -49,6 +49,9 @@ var layer = new Konva.Layer();
 
 //https://konvajs.github.io/docs/sandbox/Drag_and_Drop_Multiple_Shapes.html
 makePlayerCoords(fourFourTwoHomeX, fourFourTwoHomeY, 1);
+for(var i = 0; i < 11; ++i){
+            console.log(defaultHome[i]);
+}
 //make draggable player markers
 for(var i = 0; i < 22; ++i) {
     if(i<11){
