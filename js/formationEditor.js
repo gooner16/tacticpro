@@ -1,37 +1,38 @@
-var coords = {
-    x:0,
-    y:0
-};
-
 //coordinates for default load
 var defaultHome = [];
 var defaultAway = [];
-//example coords for testing
-var fourFourTwoHomeX = [0.8,1,1,1,1,2,2,2,2,3,3];
-var fourFourTwoHomeY = [2.5,1,2,3,4,1,2,3,4,2,3];
+
+//example coords for testing -> move to a json with all formations
+var threeFiveTwoHomeX = [0.5];
+var threeFiveTwoY = [2.5,1,2,3,4,1,2,3,4,2,3];
+var fourFourTwoHomeX = [0.5,1,1,1,1,2,2,2,2,3,3];
+var fourFourTwoAwayX = [3.5,3,3,3,3,2,2,2,2,1,1];
+var fourFourTwoY = [2.5,1,2,3,4,1,2,3,4,2,3];
+
 //1 for home 0 for away coords
 function makePlayerCoords(xCoords, yCoords, homeOrAway){
     if(homeOrAway){
         defaultHome = [];
         //create default home coordinates
         for(var i = 0; i < 11; ++i){
-            coords.x = xCoords[i];
-            coords.y = yCoords[i];
-            console.log(coords);
+			var coords = {
+				x:xCoords[i],
+				y:yCoords[i]
+			};
             defaultHome.push(coords);
         }
     }else{
         defaultAway = [];
         //create default away coordinates
         for(var i = 0; i < 11; ++i){
-            coords.x = xCoords[i];
-            coords.y = yCoords[i];
+            var coords = {
+				x:xCoords[i],
+				y:yCoords[i]
+			};
             defaultAway.push(coords);
         }
-    }
-    
+    }   
 }
-
 
 var width = $(document.getElementById('container')).width();
 var height = window.innerHeight;
@@ -42,17 +43,13 @@ var stage = new Konva.Stage({
     height: height,
 });
 
-//coordinates for default load
-var defaultX = [1,2,3,1,2,3,1,2,3,1,2];
-var defaultY = [1,2,3,4,1,2,3,4,1,2,3];
-
 var layer = new Konva.Layer();
 
+//default to 442
+makePlayerCoords(fourFourTwoHomeX, fourFourTwoY, 1);
+makePlayerCoords(fourFourTwoAwayX, fourFourTwoY, 0);
 //https://konvajs.github.io/docs/sandbox/Drag_and_Drop_Multiple_Shapes.html
-makePlayerCoords(fourFourTwoHomeX, fourFourTwoHomeY, 1);
-for(var i = 0; i < 11; ++i){
-            console.log(defaultHome[i]);
-}
+
 //make draggable player markers
 for(var i = 0; i < 22; ++i) {
     if(i<11){
@@ -69,8 +66,8 @@ for(var i = 0; i < 22; ++i) {
     }else{
     	//draw home team
     	var box = new Konva.Circle({
-            x: (defaultX[i-11]*stage.getWidth() / 7) + (3/7)*stage.getWidth(),
-      		y: defaultY[i-11]*stage.getHeight() / 5,
+            x: (defaultAway[i-11].x*stage.getWidth() / 7) + (3/7)*stage.getWidth(),
+      		y: defaultAway[i-11].y*stage.getHeight() / 5,
             fill: "blue",
             stroke: "black",
             strokeWidth: 4,
