@@ -10,7 +10,42 @@
 				background-position: center;
 				background-size:100%,100%;
 			}
+			
 #tabs-1 {
 				margin: 0;
 				padding: 0;
+				width:97%
 			}
+
+.formationButtons {
+				position: absolute;
+				right: 0%;
+				top: 5%;
+				width: 6%;
+			} 
+
+.formationButtons button {
+    background-color: #006600; /* Green background */
+    border: 1px solid grey;
+    color: white;
+    cursor: pointer; 
+	padding: 15%;
+	margin-bottom: 10%;
+	width: 100%;
+}
+
+.formationButtons button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.formationButtons:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.formationButtons button:hover {
+    background-color: #3e8e41;
+}
