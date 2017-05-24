@@ -1,51 +1,63 @@
 #container {
-				width: inherit;
-				height: inherit;
-				margin: 0;
-				padding: 0;
-				overflow: auto;
-				background-color: #F0F0F0;
-				background-image: url("../resources/soccer-field-1.jpg");
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size:100%,100%;
-			}
-			
-#tabs-1 {
-				margin: 0;
-				padding: 0;
-				width:97%
-			}
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: #F0F0F0;
+    background-image: url("../resources/soccer-field-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%, 100%;
+}
 
-.formationButtons {
-				position: absolute;
-				right: 0%;
-				top: 5%;
-				width: 6%;
-			} 
+#tabs-1 {
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+
+.formationButtonsHome {
+    position: static;
+    bottom: 0%;
+    left: 0%;
+    width: 50%;
+}
+
+.formationButtonsAway {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    width: 50%;
+}
 
 .formationButtons button {
-    background-color: #006600; /* Green background */
+    background-color: #006600;
+    /* Green background */
     border: 1px solid grey;
     color: white;
-    cursor: pointer; 
-	padding: 15%;
-	margin-bottom: 10%;
-	width: 100%;
+    cursor: pointer;
+    padding: 2%;
+    width: 10%;
 }
 
 .formationButtons button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
+    border-right: none;
+    /* Prevent double borders */
 }
 
+
 /* Clear floats (clearfix hack) */
+
 .formationButtons:after {
     content: "";
     clear: both;
     display: table;
 }
 
+
 /* Add a background color on hover */
+
 .formationButtons button:hover {
     background-color: #3e8e41;
 }

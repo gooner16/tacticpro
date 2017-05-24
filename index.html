@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-	<!-- tabs -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Tactic Pro</title>
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="css/style.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script>
-	$( function() {
-	$( "#tabs" ).tabs();
-	} );
-	// end tabs
-	</script>
-	<script src="https://cdn.rawgit.com/konvajs/konva/1.6.1/konva.min.js"></script>
-	<meta charset="utf-8">
+    <!-- tabs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tactic Pro</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#tabs").tabs();
+        });
+        // end tabs
+    </script>
+    <script src="https://cdn.rawgit.com/konvajs/konva/1.6.1/konva.min.js"></script>
+    <meta charset="utf-8">
 
 </head>
 
 <body>
 
-	<div id="tabs">
-		<ul>
-			<li><a href="#tabs-1">Formation Editor</a></li>
-			<li><a href="#tabs-2">Drill Maker</a></li>
-			<li><a href="#tabs-3">Player Data</a></li>
-		</ul>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Formation Editor</a></li>
+            <li><a href="#tabs-2">Drill Maker</a></li>
+            <li><a href="#tabs-3">Player Data</a></li>
+        </ul>
 
-		<div id="tabs-1">
-			<div id="container">
-				<script src="js/formationEditor.js"></script>
-			</div>
-			
+        <div id="tabs-1">
+            <div id="container">
+                <script src="js/formationEditor.js"></script>
+            </div>
 
-			<div class="formationButtons">
-				<button type="button" onclick="draw352Home()">3-5-2 Home</button>
-				<button type="button" onclick="draw352Away()">3-5-2 Away</button>
-				<button type="button" onclick="draw433Home()">4-3-3 Home</button>
-				<button type="button" onclick="draw433Away()">4-3-3 Away</button>
-				<button type="button" onclick="draw442Home()">4-4-2 Home</button>
-				<button type="button" onclick="draw442Away()">4-4-2 Away</button>
-			</div>
-		</div>
 
-		<div id="tabs-2">
+            <div class="formationButtons">
+                <div class="formationButtonsHome">
+                    <button type="button" onclick="draw352Home()">3-5-2 Home</button>
+                    <button type="button" onclick="draw433Home()">4-3-3 Home</button>
+                    <button type="button" onclick="draw442Home()">4-4-2 Home</button>
+                </div>
+                <div class="formationButtonsAway">
+                    <button type="button" onclick="draw352Away()">3-5-2 Away</button>
+                    <button type="button" onclick="draw433Away()">4-3-3 Away</button>
+                    <button type="button" onclick="draw442Away()">4-4-2 Away</button>
+                </div>
+            </div>
+        </div>
 
-		</div>
+        <div id="tabs-2">
 
-		<div id="tabs-3">
+        </div>
 
-		</div>
+        <div id="tabs-3">
 
-	</div>
-  
+        </div>
+
+    </div>
+
 </body>
 
 </html>
