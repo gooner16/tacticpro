@@ -1,6 +1,11 @@
+//TODO: add colour changer
 //coordinates for default load
 var defaultHome = [];
 var defaultAway = [];
+var defaultLabels = [];
+for (var i = 0; i < 22; ++i) {
+    defaultLabels.push(i.toString());
+}
 
 //example coords for testing -> move to a json with all formations
 var fourThreeThreeHomeX = [0.5, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3];
@@ -74,16 +79,6 @@ function drawPlayers() {
                 radius: stage.getWidth() / 50
             }));
 
-            // add text to the label
-            label.add(new Konva.Text({
-                text: i,
-                fontSize: 20,
-                lineHeight: 1.2,
-                offsetX: stage.getWidth() / 50,
-                offsetY: -stage.getWidth() / 50,
-                padding: 0,
-                fill: 'white'
-            }));
         } else {
             //draw away team
             // create label
@@ -100,20 +95,21 @@ function drawPlayers() {
                 strokeWidth: 4,
                 draggable: false,
                 radius: stage.getWidth() / 50
-            }));
-
-            // add text to the label
-            label.add(new Konva.Text({
-                text: i,
-                fontSize: 20,
-                lineHeight: 1.2,
-                offsetX: stage.getWidth() / 50,
-                offsetY: -stage.getWidth() / 50,
-                padding: 0,
-                fill: 'white'
-            }));
+            }))
         }
 
+        // add text to the label
+        label.add(new Konva.Text({
+            text: defaultLabels[i],
+            fontSize: 20,
+            lineHeight: 1.2,
+            offsetX: stage.getWidth() / 50,
+            offsetY: -stage.getWidth() / 50,
+            padding: 0,
+            fill: 'white'
+        }));
+
+        //action when dragging
         label.on("dragstart", function() {
             this.moveToTop();
             layer.draw();
@@ -122,11 +118,20 @@ function drawPlayers() {
             document.body.style.cursor = "pointer";
         });
         /*
-         * dblclick to remove box for desktop app
-         * and dbltap to remove box for mobile app
+         * dblclick for desktop app
+         * and dbltap for mobile app
          */
         label.on("dblclick dbltap", function() {
-            this.destroy();
+            //Ask for label with user prompt
+            var oldLabel = this.getText().text();
+            var indexToChange = defaultLabels.indexOf(oldLabel);
+            var playerLabel = prompt("Change the label:", oldLabel);
+
+            //make the change
+            this.getText().text(playerLabel);
+            //save change
+            defaultLabels[indexToChange] = playerLabel;
+
             layer.draw();
         });
         label.on("mouseover", function() {
@@ -135,6 +140,7 @@ function drawPlayers() {
         label.on("mouseout", function() {
             document.body.style.cursor = "default";
         });
+
         //layer.add(box);
         layer.add(label);
     }
