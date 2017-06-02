@@ -1,4 +1,10 @@
 //TODO: add colour changer
+//more formations 343 41212 4231  fals9 532
+//move coords to json
+//save formations
+//scale players dynamically
+//fix null name error
+
 //coordinates for default load
 var defaultHome = [];
 var defaultAway = [];
